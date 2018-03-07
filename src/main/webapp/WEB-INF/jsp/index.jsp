@@ -5,7 +5,7 @@
     <%@include file="/common/head.jsp" %>
 </head>
 <body class="easyui-layout">
-<div data-options="region:'north',split:true" style="height:100px;border-bottom:solid 1px #666;">
+<div data-options="region:'north',split:true" style="height:80px;border-bottom:solid 1px #666;">
     <TABLE style="width:100%;">
         <TR >
             <td ><img src="images/logo.gif"></td>
@@ -14,20 +14,16 @@
         </tr>
     </table>
 </div>
-<div class="easyui-accordion" data-options="region:'west',split:true" style="width:200px;background:#2A7BC5">
-    <%--
-    <c:import url="treeNodeAction.action">
-        <c:param name="method">list</c:param>
-    </c:import>
-    <c:forEach var="i" items="${list}">
-        <div  title=" ${i.treeNodeName } " data-options="selected:true" style="overflow:auto;padding:0px;">
-            <ul id="${i.treeNodeId }" class="myTree"></ul>
+<div class="easyui-accordion" data-options="region:'west',split:true" style="width:200px;">
+    <c:forEach items="${list}" var="v">
+        <div title="${v.treeNodeName}" data-options="selected:true" style="overflow:auto;padding:0px;">
+            <ul id="${v.treeNodeId}" class="myTree"></ul>
         </div>
-    </c:forEach>--%>
+    </c:forEach>
 </div>
 <div data-options="region:'center'" style="padding:0px;background:#eee;">
     <div id="tt" class="easyui-tabs" style="width:500px;height:250px;" data-options="fit:true">
-        <div title="tab1" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
+        <div title="客户关系系统" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
             <img src="images/welcome.gif" />
         </div>
     </div>
