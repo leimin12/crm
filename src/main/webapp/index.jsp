@@ -1,5 +1,5 @@
 <html>
 <body>
-<jsp:forward page="/input/toIndex"/>
+<jsp:forward page="/sysTreeNode/list?parentNodeId=-1"/>
 </body>
 </html>
