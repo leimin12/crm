@@ -1,6 +1,6 @@
 $(function() {
     $("ul.myTree").each(function() {
-        var url = "treeNodeAction.action?parentNodeId="
+        var url = "sysTreeNode/listByParentId?parentNodeId="
             + $(this).attr("id");
         $(this).tree({
             url : url,
@@ -9,7 +9,7 @@ $(function() {
                     // 这个this代表着是当前jQuery对象 （还是属于遍历中的元素）
                     // 取出该对象的所有potions默认参数 并且改变参数的值
                     var defaluts = $(this).tree("options");
-                    var newUrl = "treeNodeAction.action?parentNodeId="
+                    var newUrl = "sysTreeNode/listByParentId?parentNodeId="
                         + node.id;
                     defaluts.url = newUrl;
                 }
