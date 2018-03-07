@@ -1,6 +1,11 @@
 package com.zking.crm.model;
 
-public class SysTreeNode {
+import java.io.Serializable;
+
+public class SysTreeNode implements Serializable{
+
+    private static final Integer LEAF = new Integer(2);
+
     private Integer treeNodeId;
 
     private String treeNodeName;
@@ -12,6 +17,10 @@ public class SysTreeNode {
     private Integer parentNodeId;
 
     private String url;
+
+    public boolean isleaf() {// 匹配二级节点
+        return LEAF.equals(treeNodeType);
+    }
 
     public SysTreeNode(Integer treeNodeId, String treeNodeName, Integer treeNodeType, Integer position, Integer parentNodeId, String url) {
         this.treeNodeId = treeNodeId;
@@ -72,5 +81,17 @@ public class SysTreeNode {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "SysTreeNode{" +
+                "treeNodeId=" + treeNodeId +
+                ", treeNodeName='" + treeNodeName + '\'' +
+                ", treeNodeType=" + treeNodeType +
+                ", position=" + position +
+                ", parentNodeId=" + parentNodeId +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
