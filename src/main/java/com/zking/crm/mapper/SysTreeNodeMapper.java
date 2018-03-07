@@ -1,7 +1,10 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.SysTreeNode;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface SysTreeNodeMapper {
     int deleteByPrimaryKey(Integer treeNodeId);
 
@@ -14,4 +17,6 @@ public interface SysTreeNodeMapper {
     int updateByPrimaryKeySelective(SysTreeNode record);
 
     int updateByPrimaryKey(SysTreeNode record);
+
+    List<SysTreeNode> list(SysTreeNode sysTreeNode);
 }

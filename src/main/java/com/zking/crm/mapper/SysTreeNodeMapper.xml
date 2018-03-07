@@ -20,6 +20,17 @@
     from t_sys_tree_node
     where tree_node_id = #{treeNodeId,jdbcType=INTEGER}
   </select>
+  <select id="list" resultMap="BaseResultMap"
+          parameterType="com.zking.crm.model.SysTreeNode">
+    SELECT * from t_sys_tree_node where 1=1
+    <if test="parentNodeId == null or parentNodeId==-1" >
+      and parent_node_id is null
+    </if>
+    <if test="parentNodeId != null and parentNodeId!=-1" >
+      and parent_node_id=#{parentNodeId,jdbcType=INTEGER}
+    </if>
+    order by position asc;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_sys_tree_node
     where tree_node_id = #{treeNodeId,jdbcType=INTEGER}
