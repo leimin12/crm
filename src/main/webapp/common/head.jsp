@@ -13,3 +13,8 @@
 <script type="text/javascript" src="jquery-easyui-1.5.1/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/context.jsp"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/dealService.js" type="text/javascript"></script>
+<script src="js/dispatchService.js" type="text/javascript"></script>
+<script src="js/dict.js" type="text/javascript"></script>
+<script src="js/arch.js" type="text/javascript"></script>
