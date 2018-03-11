@@ -75,7 +75,6 @@ $ (function () {
 
     });
     $("#dg").click(function () {
-        alert($("#dictType").val()+$("#dictItem").val()+$("#dictValue").val());
         var formData = {
             dictType:$("#dictType").val(),
             dictItem:$("#dictItem").val(),
