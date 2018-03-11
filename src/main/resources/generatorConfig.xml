@@ -72,10 +72,17 @@
             &lt;!&ndash;&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;&ndash;&gt;
         </table>-->
 
-        <table tableName="t_sys_tree_node" domainObjectName="SysTreeNode"
+        <table tableName="sys_user" domainObjectName="SysUser"
                 enableCountByExample="false" enableDeleteByExample="false"
                 enableSelectByExample="false" enableUpdateByExample="false">
         </table>
-
+        <table tableName="sal_chance" domainObjectName="SalChance"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false">
+        </table>
+        <table tableName="sal_plan" domainObjectName="SalPlan"
+                       enableCountByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" enableUpdateByExample="false">
+    </table>
     </context>
 </generatorConfiguration>
