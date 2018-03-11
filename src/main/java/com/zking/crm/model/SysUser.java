@@ -1,65 +1,67 @@
 package com.zking.crm.model;
 
-public class SysUser {
-    private Long usrId;
+import java.io.Serializable;
 
-    private String usrName;
+public class SysUser  implements Serializable {
+    private Integer userId;
 
-    private String usrPassword;
+    private String userName;
 
-    private Long usrRoleId;
+    private String userPassword;
 
-    private Integer usrFlag;
+    private Integer userRoleId;
 
-    public SysUser(Long usrId, String usrName, String usrPassword, Long usrRoleId, Integer usrFlag) {
-        this.usrId = usrId;
-        this.usrName = usrName;
-        this.usrPassword = usrPassword;
-        this.usrRoleId = usrRoleId;
-        this.usrFlag = usrFlag;
+    private Integer userFlag;
+
+    public SysUser(Integer userId, String userName, String userPassword, Integer userRoleId, Integer userFlag) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userRoleId = userRoleId;
+        this.userFlag = userFlag;
     }
 
     public SysUser() {
         super();
     }
 
-    public Long getUsrId() {
-        return usrId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUsrId(Long usrId) {
-        this.usrId = usrId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getUsrName() {
-        return usrName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsrName(String usrName) {
-        this.usrName = usrName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUsrPassword() {
-        return usrPassword;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setUsrPassword(String usrPassword) {
-        this.usrPassword = usrPassword;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public Long getUsrRoleId() {
-        return usrRoleId;
+    public Integer getUserRoleId() {
+        return userRoleId;
     }
 
-    public void setUsrRoleId(Long usrRoleId) {
-        this.usrRoleId = usrRoleId;
+    public void setUserRoleId(Integer userRoleId) {
+        this.userRoleId = userRoleId;
     }
 
-    public Integer getUsrFlag() {
-        return usrFlag;
+    public Integer getUserFlag() {
+        return userFlag;
     }
 
-    public void setUsrFlag(Integer usrFlag) {
-        this.usrFlag = usrFlag;
+    public void setUserFlag(Integer userFlag) {
+        this.userFlag = userFlag;
     }
 }

@@ -1,15 +1,17 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.SysUser;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SysUserMapper {
-    int deleteByPrimaryKey(Long usrId);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(SysUser record);
 
     int insertSelective(SysUser record);
 
-    SysUser selectByPrimaryKey(Long usrId);
+    SysUser selectByPrimaryKey(Integer userId);
 
     int updateByPrimaryKeySelective(SysUser record);
 
