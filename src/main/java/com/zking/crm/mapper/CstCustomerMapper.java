@@ -23,6 +23,6 @@ public interface CstCustomerMapper {
 
     List<CstCustomer> listregion(CstCustomer cstCustomer);
 
-    List<CstCustomer> listmanagerid();
+
 
 }

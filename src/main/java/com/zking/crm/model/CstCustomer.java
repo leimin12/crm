@@ -45,6 +45,7 @@ public class CstCustomer implements Serializable{
 
     private String custLocalTaxNo;
 
+
     private String custStatus;
 
     public CstCustomer(String custNo, String custName, String custRegion, Long custManagerId, String custManagerName, Integer custLevel, String custLevelLabel, Integer custSatisfy, Integer custCredit, String custAddr, String custZip, String custTel, String custFax, String custWebsite, String custLicenceNo, String custChieftain, Long custBankroll, Long custTurnover, String custBank, String custBankAccount, String custLocalTaxNo, String custStatus) {
