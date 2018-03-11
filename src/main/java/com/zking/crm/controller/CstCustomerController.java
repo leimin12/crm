@@ -26,16 +26,8 @@ public class CstCustomerController {
     public void init(Model model, HttpSession session){
         CstCustomer cstCustomer = new CstCustomer();
         List<CstCustomer> listregion = iCstCustomerBiz.listregion(cstCustomer);
-        List<CstCustomer> listmanagerid = iCstCustomerBiz.listmanagerid(cstCustomer);
-        List<CstCustomer> listlevelint = iCstCustomerBiz.listlevelint(cstCustomer);
-        List<CstCustomer> listsatisfy = iCstCustomerBiz.listsatisfy(cstCustomer);
-        List<CstCustomer> listcredit = iCstCustomerBiz.listcredit(cstCustomer);
 
         model.addAttribute("listregion",listregion);
-        model.addAttribute("listmanagerid",listmanagerid);
-        model.addAttribute("listlevelint",listlevelint);
-        model.addAttribute("listsatisfy",listsatisfy);
-        model.addAttribute("listcredit",listcredit);
 
         model.addAttribute("cst",cstCustomer);
 
