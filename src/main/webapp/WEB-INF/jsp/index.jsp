@@ -7,7 +7,7 @@
 <body class="easyui-layout">
 <div data-options="region:'north',split:true" style="height:80px;border-bottom:solid 1px #666;">
     <TABLE style="width:100%;">
-        <TR >
+        <tr>
             <td ><img src="images/logo.gif"></td>
             <td style="font-family:黑体;font-size:33px;font-weight:bold;"> 客户关系管理系统</td>
             <td width="25%" align="right" style="font-size:12px;" valign="bottom">当前用户：刘颖（系统管理员）&nbsp;&nbsp; 退出系统 </td>
@@ -22,7 +22,8 @@
     </c:forEach>
 </div>
 <div data-options="region:'center'" style="padding:0px;background:#eee;">
-    <div id="tt" class="easyui-tabs" style="width:500px;height:250px;" data-options="fit:true">
+    <div id="tt" class="easyui-
+    tabs" style="width:500px;height:250px;" data-options="fit:true">
         <div title="客户关系系统" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
             <img src="images/welcome.gif" />
         </div>
