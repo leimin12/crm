@@ -30,7 +30,7 @@
 </div>
 <div data-options="region:'south'" style="height:50px;background:#eee;font-size:12px;scroll:no;border-top:solid 1px #666;">
     <div style="text-align:right;padding:6px;">
-        &copy;  2008 北大青鸟APTECH(涞水慧仁)授权培训中心 Y272班 第7组
+        &copy;  2008 北大青鸟APTECH(涞水慧仁)授权培训中心 G160818班 第7组
     </div>
 </div>
 </body>
