@@ -41,7 +41,7 @@ function openTab(text, path) {
         $("#tt").tabs("select", text);// 如果有则根据文本来进行选中
         var tabss = $("#tt").tabs("getTab", text);
         // 在查询出来的选项卡中找到含有iframe的元素改变src的路径 实现强制刷新
-        $("iframe", tabss).attr("src", context+path);
+        $("iframe", tabss).attr("src", path);
     } else {
         // 如果没有已经存在的就重新创建一个新的tab
         var context = "<iframe scrolling=\"no\" frameborder=\"0\" src=\""
