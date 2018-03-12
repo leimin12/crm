@@ -10,7 +10,7 @@
 <table class="query_form_table">
     <tr>
         <th>编号</th>
-        <td>${load.chcId}</td>
+        <td id="chcId">${load.chcId}</td>
         <th>机会来源</th>
         <td>${load.chcSource}</td>
     </tr>
