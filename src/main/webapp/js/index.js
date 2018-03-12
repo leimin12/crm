@@ -52,4 +52,6 @@ function openTab(text, path) {
             closable : true
         });
     }
+
+
 }
