@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2018/3/8
@@ -13,85 +13,90 @@
     <title>jb-aptech毕业设计项目</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        $(function () {
+            $("#dsubmit").click(function () {
+                $('#deal').form('submit', {
+                    url:"svr/ToDealEdit",
+                    success:function(data){
+                    }
+                });
+            });
+        });
+    </script>
 </head>
+
 <body>
 
 <div class="page_title">客户服务管理 &gt; 服务处理</div>
+<form method="post" id="deal">
+
 <div class="button_bar">
     <button class="common_button" onclick="help('');">帮助</button>
     <button class="common_button" onclick="back();">返回</button>
-    <button class="common_button" onclick="save('feedback.html');">保存</button>
+    <button id="dsubmit" class="common_button">保存</button>
 </div>
 <table class="query_form_table">
     <tr>
         <th>编号</th>
-        <td>456</td>
+        <td>${satisfy.svrId}</td>
         <th>服务类型</th>
-        <td>
-            咨询</td>
+        <td>${satisfy.svrType}</td>
     </tr>
     <tr>
         <th>概要</th>
-        <td colspan="3">询问收音机订单运费承担方式</td>
+        <td colspan="3">${satisfy.svrTitle}</td>
     </tr>
     <tr>
         <th>客户</th>
-        <td>太阳药业</td>
+        <td>${satisfy.svrCustName}</td>
         <th>状态</th>
-        <td>已分配</td>
+        <td>
+            <c:if test="${satisfy.svrStatus==2}">
+                已分配
+            </c:if>
+        </td>
     </tr>
     <tr>
         <th>服务请求</th>
-        <td colspan="3">收音机订单运费如何承担？<br>
+        <td colspan="3">${satisfy.svrRequest}<br>
             　</td>
     </tr>
     <tr>
         <th>创建人</th>
-        <td>小明</td>
+        <td>${satisfy.svrCreateBy}</td>
         <th>创建时间</th>
-        <td>2007年12月02日 15时26分58秒</td>
+        <td>
+            <m:formatDate value="${satisfy.svrCreateDate}" pattern="YYYY年MM月dd日 HH时mm分ss秒"></m:formatDate>
+            </td>
     </tr>
 </table>
 <br />
 <table class="query_form_table" id="table3">
     <tr>
         <th>分配给</th>
-        <td>
-            旺财</td>
+        <td>${satisfy.svrDueTo}</td>
         <th>分配时间</th>
-        <td>2007年12月02日 15时28分06秒</td>
+        <td><m:formatDate value="${satisfy.svrDueDate}" pattern="YYYY年MM月dd日 HH时mm分ss秒"></m:formatDate></td>
     </tr>
 </table>
-<br />
+<br/>
 <table class="query_form_table" id="table1">
     <tr>
-        <th>服务处理</th>
-        <td colspan="3"><textarea rows="6" cols="50"></textarea><span class="red_star">*</span></td>
+        <th>服务处理
+            <input name="svrId" type="hidden" value="${satisfy.svrId}">
+            <input name="svrStatus" type="hidden" value="3">
+        </th>
+        <td colspan="3"><textarea name="svrDeal " rows="6" cols="50"></textarea><span class="red_star">*</span></td>
     </tr>
     <tr>
         <th>处理人</th>
-        <td><input name="T17" value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
+        <td><input name="svrDealBy " value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
         <th>处理时间</th>
-        <td><input id="t3" name="T16" readonly size="20" /><span class="red_star">*</span></td>
+        <td><input  name="svrDealDate" value="<%=new Date()%>" readonly size="20" /><span class="red_star">*</span></td>
     </tr>
 </table>
-<br />
-<table disabled class="query_form_table" id="table2">
-    <tr>
-        <th>处理结果</th>
-        <td><input name="T10" size="20" /><span class="red_star">*</span></td>
-        <th>满意度</th>
-        <td>
-            <select name="D1">
-                <option>请选择...</option>
-                <option>☆☆☆☆☆</option>
-                <option>☆☆☆☆</option>
-                <option>☆☆☆</option>
-                <option>☆☆</option>
-                <option>☆</option>
-            </select><span class="red_star">*</span></td>
-    </tr>
-</table>
+</form>
 <script>
     setCurTime('t3');
 </script>

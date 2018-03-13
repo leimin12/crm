@@ -10,6 +10,7 @@ $ (function () {
             text:'新增',
             handler: function(){
                 parent.openTab('字典新增','dict/Toadd');
+
             }
         },'-',{
             iconCls: 'icon-remove',
@@ -28,10 +29,10 @@ $ (function () {
                             dataType:'json',
                             url:url,
                             success:function(data){
-                                if(0==data.code){
-                                    $.messager.alert('提示','删除成功');
+                                if(1==data){
                                     var ind=$('#di').datagrid("getRowIndex",dictId);
                                     $('#di').datagrid("deleteRow",ind);
+                                    $.messager.alert('提示','删除成功');
                                 }else{
                                     $.messager.alert('警告','删除失败,请与管理员联系');
                                 }

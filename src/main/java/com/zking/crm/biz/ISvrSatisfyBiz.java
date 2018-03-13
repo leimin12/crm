@@ -7,7 +7,7 @@ import java.util.List;
 public interface ISvrSatisfyBiz {
     void add(SvrSatisfy svrSatisfy);
 
-     void del(SvrSatisfy svrSatisfy);
+     int del(SvrSatisfy svrSatisfy);
 
      void edit(SvrSatisfy svrSatisfy);
 

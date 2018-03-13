@@ -53,3 +53,51 @@ function openTab(text, path) {
         });
     }
 }
+//刷新
+function refresh() {
+    var tab = $('#tt').tabs('getTab',text);
+    // 获取选择的面板
+    tab.panel('refresh');
+}
+//关闭当前的tab
+function removePanel(){
+    var tab = $('#tt').tabs('getSelected');
+    if (tab){
+        var index = $('#tt').tabs('getTabIndex', tab);
+        $('#tt').tabs('close', index);
+    }
+}
+//子页面JS方法（title为tab的标题）
+function closeThisTab(title){
+    window.parent.closeTab(title)
+}
+//父页面JS方法
+function closeTab(title){
+    if ($('#tt').tabs('exists',title)){
+        $('#tt').tabs('close',title)
+    }
+
+}
+
+function closeTab() {
+    var lastTabs = new Array();
+    /*
+    * cdh 2010.0630 补充，用于 退回上次标签页
+    */
+    $('#tt').tabs({
+        onSelect: function(tt) {
+//移除 tt
+            lastTabs = $.grep(lastTabs, function(n, i) { return n != tt; });
+//重新压入，保证 最新的在最上面
+            lastTabs.push(tt);
+//更新当前
+            currentTabTitle = tt;
+        },
+        onClose: function(tt) {
+//移除 tt
+            lastTabs = $.grep(lastTabs, function(n, i) { return n != tt; });
+//重新选择
+            $('#tt').tabs('select', lastTabs[lastTabs.length - 1]);
+        }
+    });
+}

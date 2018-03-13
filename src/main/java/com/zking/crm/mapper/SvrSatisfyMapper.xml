@@ -47,7 +47,7 @@
     <if test="svrType != null and ''!=svrType" >
      and svr_type =#{svrType,jdbcType=VARCHAR}
     </if>
-    <if test="svrStatus != null" >
+    <if test="svrStatus != null and ''!=svrStatus" >
       and svr_status=#{svrStatus,jdbcType=VARCHAR}
     </if>
   </select>

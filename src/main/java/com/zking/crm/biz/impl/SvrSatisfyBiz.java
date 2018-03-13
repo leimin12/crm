@@ -18,8 +18,8 @@ public class SvrSatisfyBiz implements ISvrSatisfyBiz {
     }
 
     @Override
-    public void del(SvrSatisfy svrSatisfy) {
-        svrSatisfyMapper.deleteByPrimaryKey(svrSatisfy.getSvrId());
+    public int del(SvrSatisfy svrSatisfy) {
+        return svrSatisfyMapper.deleteByPrimaryKey(svrSatisfy.getSvrId());
     }
 
     @Override
@@ -34,6 +34,6 @@ public class SvrSatisfyBiz implements ISvrSatisfyBiz {
 
     @Override
     public List<SvrSatisfy> list(SvrSatisfy svrSatisfy, PageBean pageBean) {
-        return svrSatisfyMapper.list();
+        return svrSatisfyMapper.list(svrSatisfy);
     }
 }

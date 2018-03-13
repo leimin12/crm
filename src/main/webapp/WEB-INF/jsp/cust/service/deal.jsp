@@ -17,39 +17,21 @@
 <body>
 
 <div class="page_title">客户服务管理 &gt; 服务处理</div>
-<div class="button_bar">
-    <button class="common_button" onclick="help('');">帮助</button>
-    <button class="common_button" onclick="reload();">查询</button>
+<div id="tb" style="padding:2px 5px;">
+    客户:
+    <input id="svrCustName"  type="text" style="width:100px"/>
+    概要:
+    <input id="svrTitle"  type="text" style="width:100px"/>
+    服务类型:<select id="svrType">
+    <option value="">全部</option>
+    <c:forEach items="${dictIsEditableList}" var="i">
+        <option value="${i.dictItem}">${i.dictItem}</option>
+    </c:forEach>
+</select>
+    <a id="dBt" class="easyui-linkbutton" iconCls="icon-search">查询</a>
 </div>
-<table class="query_form_table">
-    <tr>
-        <th height="28">客户</th>
-        <td><input /></td>
-        <th height="28">概要</th>
-        <td><input /></td>
-        <th height="28">服务类型</th>
-        <td>
-            <select name="D1">
-                <option>全部</option>
-                <option>咨询</option>
-                <option>建议</option>
-                <option>投诉</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <th height="32">创建日期</th>
-        <td colspan="3">
-            <input name="T2" size="10" /> - <input name="T1" size="10" /></td>
-        <th height="32">状态</th>
-        <td>
-            <select name="D1">
-                <option selected>已分配</option>
-            </select>
-        </td>
-    </tr>
-</table>
-<br/>
+
+
 <table class="data_list_table" id="sdeal" width="100%">
 
 </table>

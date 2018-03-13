@@ -15,40 +15,41 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 <div class="page_title">客户服务管理 > 服务分配</div>
-<div class="button_bar">
-    <button class="common_button" onclick="help('');">帮助</button>
-    <button class="common_button" onclick="reload();">查询</button>
+
+<div id="tb" style="padding:2px 5px;">
+    客户:
+    <input id="svrCustName"  type="text" style="width:100px"/>
+    概要:
+    <input id="svrTitle"  type="text" style="width:100px"/>
+    服务类型:<select id="svrType">
+        <option value="">全部</option>
+        <c:forEach items="${dictIsEditableList}" var="i">
+            <option value="${i.dictItem}">${i.dictItem}</option>
+        </c:forEach>
+        </select>
+    状态:
+    <select id="svrStatus">
+        <option value="">全部</option>
+        <option value="1">新创建</option>
+        <option value="2">已分配</option>
+        <option value="3">已处理</option>
+        <option value="4">已反馈</option>
+        <option value="5">已归档</option>
+    </select>
+    <a id="ds" class="easyui-linkbutton" iconCls="icon-search">查询</a>
 </div>
-<table class="query_form_table" height="53">
-    <tr>
-        <th height="28">客户</th>
-        <td><input /></td>
-        <th height="28">概要</th>
-        <td><input /></td>
-        <th height="28">服务类型</th>
-        <td>
-            <select name="D1">
-                <option>全部</option>
-                <option>咨询</option>
-                <option>建议</option>
-                <option>投诉</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <th height="22">创建日期</th>
-        <td colspan="3">
-            <input name="T2" size="10" /> - <input name="T1" size="10" /></td>
-        <th height="22">状态</th>
-        <td>
-            <select name="D1">
-                <option selected>新创建</option>
-            </select>
-        </td>
-    </tr>
-</table>
+
+<div id="dd" class="easyui-dialog" data-options="closed:true" title="服务分配" style="width:400px;height:100px;display: none;">
+    <select class="easyui-combobox" id="svrDueTo" style="width:380px;">
+        <option value="小明">小明</option>
+        <option value="小芳">小芳</option>
+        <option value="小王">小王</option>
+        <option value="小混混">小混混</option>
+    </select>
+</div>
+</div>
+<br />
 <br />
 <table class="data_list_table" id="sdtch" width="100%">
 

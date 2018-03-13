@@ -14,11 +14,12 @@ $ (function () {
                     $.messager.alert('警告', '请选择要处理的记录');
                     return;
                 }else{
-
+                    var svrId=rows.svrId;
+                    parent.openTab('服务处理','svr/ToArchLoad?svrId='+svrId);
                 }
             }
         }],
-        url:"svr/ToList",
+        url:"svr/ToListDispatch?svrStatus=4",
         columns : [[{
             field : 'svrCustName',
             title : '客户',
@@ -42,18 +43,31 @@ $ (function () {
         }, {
             field : 'svrStatus',
             title : '状态',
-            width : "10%"
+            width : "10%",
+            formatter: function(value){
+                if (value==1){
+                    return '新创建';
+                } else if(value==2) {
+                    return '已分配';
+                }else if(value==3){
+                    return '已处理';
+                }else if (value==4){
+                    return '已归档';
+                }else {
+                    return value;
+                }
+            }
         }]]
 
     });
-    $("#listBt").click(function () {
+    $("#da").click(function () {
         var formData = {
-            svrCustName:$("#svrCustName").val()
-            // svrType:$("#svrType").val(),
-            // T1:$("#T1").val(),
-            // T2:$("#T2").val()
+            svrCustName:$("#svrCustName").val(),
+            svrType:$("#svrType").val(),
+            svrTitle:$("#svrTitle").val(),
+            svrStatus:$("#svrStatus").val()
         };
-        $("#darch").datagrid(function () {
+        $("#darch").datagrid({
             queryParams : formData
         });
         return false;

@@ -47,10 +47,11 @@ public class DictIsEditableController {
     public String ToAdd(){
         return "basd/dict_add";
     }
+
     @RequestMapping("/Todel")
-    public String Del(DictIsEditable dictIsEditable,Model model){
-        idIctIsEditableBiz.del(dictIsEditable);
-        return "forward:/dict/dictlist";
+    @ResponseBody
+    public int Del(DictIsEditable dictIsEditable,Model model){
+        return idIctIsEditableBiz.del(dictIsEditable);
     }
     @RequestMapping("/Toload")
     public String Load(DictIsEditable dictIsEditable,Model model){
@@ -59,11 +60,13 @@ public class DictIsEditableController {
         return "basd/dict_edit";
     }
     @RequestMapping("/ToEidt")
+    @ResponseBody
     public void Edit(DictIsEditable dictIsEditable) {
         idIctIsEditableBiz.eidt(dictIsEditable);
     }
     @RequestMapping("/add")
-    public void Add(DictIsEditable dictIsEditable){
-        idIctIsEditableBiz.add(dictIsEditable);
+    @ResponseBody
+    public int Add(DictIsEditable dictIsEditable){ idIctIsEditableBiz.add(dictIsEditable);
+    return 1;
     }
 }

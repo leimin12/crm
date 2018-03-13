@@ -1,5 +1,7 @@
 package com.zking.crm.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,7 +23,7 @@ public class SvrSatisfy implements Serializable{
     private Long svrCreateId;
 
     private String svrCreateBy;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date svrCreateDate;
 
     private Long svrDueId;
@@ -35,7 +37,7 @@ public class SvrSatisfy implements Serializable{
     private Long svrDealId;
 
     private String svrDealBy;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date svrDealDate;
 
     private String svrResult;

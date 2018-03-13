@@ -17,20 +17,20 @@ $ (function () {
                 $.messager.confirm('确认', '您确定删除该行记录吗？', function (r) {
                     if (r) {
                         var svrId = rows.svrId;
-                        var url = "?svrId=" + svrId;
+                        var url = "svr/toDel?svrId=" + svrId;
                         $.ajax({
                             dataType: 'json',
                             url: url,
                             success: function (data) {
-                                if (0 == data.code) {
-                                    $.messager
-                                        .alert('提示', data.message);
+                                if (1== data) {
                                     // alert(999);
                                     var ind = $("#sdtch").datagrid(
                                         "getRowIndex", svrId);
                                     $("#sdtch").datagrid("deleteRow", ind);
+                                    $.messager
+                                        .alert('提示', '删除成功');
                                 } else {
-                                    $.messager.alert('警告', '字典删除失败');
+                                    $.messager.alert('警告', '删除失败');
                                 }
                             }
                         });
@@ -41,14 +41,13 @@ $ (function () {
             iconCls: 'icon-Print',
             text: '分配',
             handler:function () {
-                var rows = $("#ssdtch").datagrid("getSelected");
-                var svrDueTo = $("#svrDueTo").combobox("getValue");
+                var rows = $("#sdtch").datagrid("getSelected");
                 if (!rows) {
                     $.messager.alert('警告', '请选择要分配的记录');
                     return;
                 }else{
                     $('#dd').dialog({
-                        title: 'My Dialog',
+                        title: '分配',
                         width: 400,
                         height: 200,
                         closed: false,
@@ -59,16 +58,18 @@ $ (function () {
                             text:'保存',
                             iconCls:'icon-save',
                             handler:function(){
-                                var url = "service/editDispatch?svrId="+rows.svrId+"&svrDueTo="+svrDueTo;
+                                var svrDueTo = $("#svrDueTo").combobox("getValue");
+                                alert(svrDueTo);
+                                var url = "svr/ToEdit?svrId="+rows.svrId+"&svrDueTo="+svrDueTo+"&svrStatus=2";
                                 $.ajax({
                                     dataType:'json',
                                     url:url,
                                     success:function (data) {
-                                        if (0 == data.code) {
+                                        if (1 == data) {
                                             $.messager
-                                                .alert('提示', data.message);
+                                                .alert('提示', '分配成功');
                                             $('#sdtch').datagrid('reload');
-                                            close();
+                                            $('#dd').dialog('close');
                                         } else {
                                             $.messager.alert('警告', '分配失败');
                                         }
@@ -81,7 +82,7 @@ $ (function () {
             }
         }
         ],
-        url:"svr/ToList",
+        url:"svr/ToListDispatch",
         columns : [[{
             field : 'svrCustName',
             title : '客户',
@@ -102,21 +103,36 @@ $ (function () {
             field : 'svrCreateDate',
             title : '创建日期',
             width : "15%"
-        }, {
+            }, {
             field : 'svrStatus',
             title : '状态',
-            width : "15%"
+            width : "15%",
+            formatter: function(value){
+                if (value==1){
+                    return '新创建';
+                } else if(value==2) {
+                    return '已分配';
+                }else if(value==3){
+                    return '已处理';
+                }else if (value==4){
+                    return '已归档';
+                }else {
+                    return value;
+                }
+            }
+
         }]]
 
     });
-    $("#sdtch").click(function () {
+    $("#ds").click(function () {
+        alert($("#svrType").val())
         var formData = {
-            svrCustName:$("#svrCustName").val()
-            // svrType:$("#svrType").val(),
-            // T1:$("#T1").val(),
-            // T2:$("#T2").val()
+            svrCustName:$("#svrCustName").val(),
+            svrType:$("#svrType").val(),
+            svrTitle:$("#svrTitle").val(),
+            svrStatus:$("#svrStatus").val()
         };
-        $("#di").datagrid({
+        $("#sdtch").datagrid({
             queryParams : formData
         });
         return false;

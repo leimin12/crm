@@ -13,13 +13,13 @@ public class DIctIsEditableBiz implements IDIctIsEditableBiz {
     @Autowired
     private DictIsEditableMapper dictIsEditableMapper;
     @Override
-    public void add(DictIsEditable dictIsEditable) {
-        dictIsEditableMapper.insert(dictIsEditable);
+    public int add(DictIsEditable dictIsEditable) {
+        return dictIsEditableMapper.insert(dictIsEditable);
     }
 
     @Override
-    public void del(DictIsEditable dictIsEditable) {
-        dictIsEditableMapper.deleteByPrimaryKey(dictIsEditable.getDictId());
+    public int del(DictIsEditable dictIsEditable) {
+        return dictIsEditableMapper.deleteByPrimaryKey(dictIsEditable.getDictId());
     }
 
     @Override

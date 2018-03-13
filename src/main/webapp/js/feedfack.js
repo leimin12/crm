@@ -1,5 +1,5 @@
 $ (function () {
-    $ ('#sdeal').datagrid({
+    $ ('#dsf').datagrid({
         pagination : true,
         pageList : [1, 2, 4, 6],
         pageSize : 6,
@@ -9,17 +9,17 @@ $ (function () {
             iconCls: 'icon-Remove',
             text: '处理',
             handler: function () {
-                var rows = $("#sdeal").datagrid("getSelected");
+                var rows = $("#dsf").datagrid("getSelected");
                 if (!rows) {
                     $.messager.alert('警告', '请选择要处理的记录');
                     return;
                 }else{
                     var svrId=rows.svrId;
-                    parent.openTab('服务处理','svr/ToDealLoad?svrId='+svrId);
+                    parent.openTab('服务反馈','svr/ToFeedLoad?svrId='+svrId);
                 }
             }
         }],
-        url:"svr/ToListDispatch?svrStatus=2",
+        url:"svr/ToListDispatch?svrStatus=3",
         columns : [[{
             field : 'svrCustName',
             title : '客户',
@@ -60,14 +60,13 @@ $ (function () {
         }]]
 
     });
-    $("#dBt").click(function () {
+    $("#df").click(function () {
         var formData = {
             svrCustName:$("#svrCustName").val(),
             svrType:$("#svrType").val(),
-            svrTitle:$("#svrTitle").val(),
-            svrStatus:$("#svrStatus").val()
+            svrTitle:$("#svrTitle").val()
         };
-        $("#sdeal").datagrid({
+        $("#dsf").datagrid({
             queryParams : formData
         });
         return false;

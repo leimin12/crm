@@ -3,8 +3,7 @@ $(function () {
         $('#ff').form('submit', {
             url:"dict/add",
             success:function(data){
-                parent.location.reload();
-
+                back();
             }
         });
     });
@@ -14,8 +13,8 @@ $(function () {
         $('#dictEdit').form('submit', {
             url:"dict/ToEidt",
             success:function(data){
-                window.location.reload();
-
+                    $.messager
+                        .alert('提示', '修改成功');
             }
         });
     });
@@ -30,3 +29,4 @@ $(function () {
         });
     });
 });
+

@@ -13,7 +13,7 @@
     <title>jb-aptech毕业设计项目</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <script src="js/add.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/add.js"></script>
 </head>
 <body>
 

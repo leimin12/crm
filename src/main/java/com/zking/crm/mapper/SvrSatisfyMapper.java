@@ -18,5 +18,5 @@ public interface SvrSatisfyMapper {
 
     int updateByPrimaryKey(SvrSatisfy record);
 
-    List<SvrSatisfy> list();
+    List<SvrSatisfy> list(SvrSatisfy svrSatisfy);
 }
