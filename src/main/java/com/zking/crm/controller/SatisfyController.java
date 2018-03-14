@@ -24,8 +24,8 @@ public class SatisfyController {
 
     @RequestMapping("doGetCount2")
     @ResponseBody
-    public List<Integer> doGetCount2(Satisfy satisfy) {
-        return satisfyBiz.doGetCount2(satisfy);
+    public List<Integer> doGetCount2(Satisfy satisfy2) {
+        return satisfyBiz.doGetCount2(satisfy2);
     }
 
 }

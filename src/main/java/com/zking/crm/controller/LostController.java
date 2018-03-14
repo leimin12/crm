@@ -26,9 +26,9 @@ public class LostController {
 
     @RequestMapping("listLost")
     @ResponseBody
-    public ResponseData listLost(Lost lost, HttpServletRequest request, PageBean pageBean, ResponseData responseData) {
+    public ResponseData listLost(Lost lost1, HttpServletRequest request, PageBean pageBean, ResponseData responseData) {
         pageBean.setRequest(request);
-        List<Lost> losts = lostBiz.listLost(lost, pageBean);
+        List<Lost> losts = lostBiz.listLost(lost1, pageBean);
         responseData.setTotal(pageBean.getTotalRecord());// 总行数
         responseData.setRows(losts);// 类似于// List/Set/Array的集合
         return responseData;

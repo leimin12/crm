@@ -24,8 +24,8 @@ public class Orders2Controller {
 
     @RequestMapping("listCount")
     @ResponseBody
-    public String listCount(Orders2 orders2) {
-        List<Map<String, Object>> maps = orders2Biz.listCount(orders2);
+    public String listCount(Orders2 orders3) {
+        List<Map<String, Object>> maps = orders2Biz.listCount(orders3);
         Map<String,Object>  map;
         Map<String,Object>  map2;
         Map<String, Object>  map3;
