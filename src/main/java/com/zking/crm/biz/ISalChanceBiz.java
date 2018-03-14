@@ -8,9 +8,13 @@ import java.util.List;
 
 public interface ISalChanceBiz {
     void add(SalChance salChance);
+
     void del(SalChance salChance);
+
     void edit(SalChance salChance);
+
     void editStatusByDispatch(SalChance salChance);
+
     List<SalChance> list(SalChance salChance, PageBean pageBean);
 
     SalChance load(SalChance salChance);

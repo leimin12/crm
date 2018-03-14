@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <th>概要</th>
-        <td colspan="3"><input name="chcTitle" value="${load.chcTitle}" size="52" /><span class="red_star">*</span></td>
+        <td colspan="3"><input name="chcTitle" value="${load.chcTitle}" size="46" /><span class="red_star">*</span></td>
     </tr>
     <tr>
         <th>联系人</th>
@@ -37,11 +37,11 @@
     </tr>
     <tr>
         <th>机会描述</th>
-        <td colspan="3"><textarea rows="6" cols="50" name="chcDesc">${load.chcDesc}</textarea><span class="red_star">*</span></td>
+        <td colspan="3"><textarea rows="6" cols="47" name="chcDesc">${load.chcDesc}</textarea><span class="red_star">*</span></td>
     </tr>
     <tr>
         <th>创建人</th>
-        <td  colspan="3"><input name="chcCreateBy" value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
+        <td  colspan="3"><input name="chcCreateBy" value="${load.chcCreateBy}" readonly size="20" /><span class="red_star">*</span></td>
     </tr>
 </table>
 </form>

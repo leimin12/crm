@@ -48,7 +48,8 @@
     <tr>
         <th>指派给</th>
         <td>
-            ${load.chcDueTo}</td>
+            ${load.chcDueTo}
+        </td>
         <th>指派时间</th>
         <td><fmt:formatDate value="${load.chcDueDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/>
            </td>

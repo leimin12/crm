@@ -14,9 +14,9 @@ public class InputController {
         return path;
     }
 
-    @RequestMapping("/toIndex")
-    public String toIndex() {
-        return "index";
+    @RequestMapping("/toLogin")
+    public String toLogin() {
+        return "login";
     }
 
 }

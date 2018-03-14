@@ -24,15 +24,15 @@
       <arg column="cust_bank" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cust_bank_account" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cust_local_tax_no" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="cust_status" jdbcType="CHAR" javaType="java.lang.String" />
       <arg column="cust_national_tax_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cust_status" jdbcType="CHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
     cust_no, cust_name, cust_region, cust_manager_id, cust_manager_name, cust_level, 
     cust_level_label, cust_satisfy, cust_credit, cust_addr, cust_zip, cust_tel, cust_fax, 
     cust_website, cust_licence_no, cust_chieftain, cust_bankroll, cust_turnover, cust_bank, 
-    cust_bank_account, cust_local_tax_no, cust_status, cust_national_tax_no
+    cust_bank_account, cust_local_tax_no, cust_national_tax_no, cust_status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -40,27 +40,29 @@
     from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    <select id="loadMax" resultType="string">
+      select max(cust_no) from cst_customer;
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="com.zking.crm.model.CstCustomer" >
-    insert into cst_customer (cust_no, cust_name, cust_region, 
-      cust_manager_id, cust_manager_name, cust_level, 
-      cust_level_label, cust_satisfy, cust_credit, 
+    insert into cst_customer (cust_no, cust_name, cust_region,cust_manager_name,
+      cust_level_label,
       cust_addr, cust_zip, cust_tel, 
       cust_fax, cust_website, cust_licence_no, 
-      cust_chieftain, cust_bankroll, cust_turnover, 
+      cust_chieftain,
       cust_bank, cust_bank_account, cust_local_tax_no, 
-      cust_status, cust_national_tax_no)
+      cust_national_tax_no)
     values (#{custNo,jdbcType=CHAR}, #{custName,jdbcType=VARCHAR}, #{custRegion,jdbcType=VARCHAR}, 
-      #{custManagerId,jdbcType=BIGINT}, #{custManagerName,jdbcType=VARCHAR}, #{custLevel,jdbcType=INTEGER}, 
-      #{custLevelLabel,jdbcType=VARCHAR}, #{custSatisfy,jdbcType=INTEGER}, #{custCredit,jdbcType=INTEGER}, 
+       #{custManagerName,jdbcType=VARCHAR},
+      #{custLevelLabel,jdbcType=VARCHAR},
       #{custAddr,jdbcType=VARCHAR}, #{custZip,jdbcType=CHAR}, #{custTel,jdbcType=VARCHAR}, 
       #{custFax,jdbcType=VARCHAR}, #{custWebsite,jdbcType=VARCHAR}, #{custLicenceNo,jdbcType=VARCHAR}, 
-      #{custChieftain,jdbcType=VARCHAR}, #{custBankroll,jdbcType=BIGINT}, #{custTurnover,jdbcType=BIGINT}, 
+      #{custChieftain,jdbcType=VARCHAR},
       #{custBank,jdbcType=VARCHAR}, #{custBankAccount,jdbcType=VARCHAR}, #{custLocalTaxNo,jdbcType=VARCHAR}, 
-      #{custStatus,jdbcType=CHAR}, #{custNationalTaxNo,jdbcType=VARCHAR})
+      #{custNationalTaxNo,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zking.crm.model.CstCustomer" >
     insert into cst_customer
@@ -128,11 +130,11 @@
       <if test="custLocalTaxNo != null" >
         cust_local_tax_no,
       </if>
-      <if test="custStatus != null" >
-        cust_status,
-      </if>
       <if test="custNationalTaxNo != null" >
         cust_national_tax_no,
+      </if>
+      <if test="custStatus != null" >
+        cust_status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -199,11 +201,11 @@
       <if test="custLocalTaxNo != null" >
         #{custLocalTaxNo,jdbcType=VARCHAR},
       </if>
-      <if test="custStatus != null" >
-        #{custStatus,jdbcType=CHAR},
-      </if>
       <if test="custNationalTaxNo != null" >
         #{custNationalTaxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="custStatus != null" >
+        #{custStatus,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -270,11 +272,11 @@
       <if test="custLocalTaxNo != null" >
         cust_local_tax_no = #{custLocalTaxNo,jdbcType=VARCHAR},
       </if>
-      <if test="custStatus != null" >
-        cust_status = #{custStatus,jdbcType=CHAR},
-      </if>
       <if test="custNationalTaxNo != null" >
         cust_national_tax_no = #{custNationalTaxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="custStatus != null" >
+        cust_status = #{custStatus,jdbcType=CHAR},
       </if>
     </set>
     where cust_no = #{custNo,jdbcType=CHAR}
@@ -301,8 +303,8 @@
       cust_bank = #{custBank,jdbcType=VARCHAR},
       cust_bank_account = #{custBankAccount,jdbcType=VARCHAR},
       cust_local_tax_no = #{custLocalTaxNo,jdbcType=VARCHAR},
-      cust_status = #{custStatus,jdbcType=CHAR},
-      cust_national_tax_no = #{custNationalTaxNo,jdbcType=VARCHAR}
+      cust_national_tax_no = #{custNationalTaxNo,jdbcType=VARCHAR},
+      cust_status = #{custStatus,jdbcType=CHAR}
     where cust_no = #{custNo,jdbcType=CHAR}
   </update>
 </mapper>

@@ -51,5 +51,4 @@ public class SysRole {
     public void setRoleFlag(Integer roleFlag) {
         this.roleFlag = roleFlag;
     }
-
 }

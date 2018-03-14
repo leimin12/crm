@@ -52,6 +52,8 @@ function openTab(text, path) {
             closable : true
         });
     }
+
+
 }
 //刷新
 function refresh() {
