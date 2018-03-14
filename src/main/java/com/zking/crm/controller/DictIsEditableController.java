@@ -51,7 +51,8 @@ public class DictIsEditableController {
     @RequestMapping("/Todel")
     @ResponseBody
     public int Del(DictIsEditable dictIsEditable,Model model){
-        return idIctIsEditableBiz.del(dictIsEditable);
+        idIctIsEditableBiz.del(dictIsEditable);
+        return 1;
     }
     @RequestMapping("/Toload")
     public String Load(DictIsEditable dictIsEditable,Model model){
