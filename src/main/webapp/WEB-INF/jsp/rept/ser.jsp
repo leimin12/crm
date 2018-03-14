@@ -62,6 +62,7 @@
         </td>
     </tr>
 </table>
+
 <br />
 <br /><br />
 <div id="chart2"></div>

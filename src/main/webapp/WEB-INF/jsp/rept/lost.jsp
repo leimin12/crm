@@ -5,6 +5,7 @@
     <%@include file="/common/head.jsp" %>
     <script type="text/javascript" src="js/rept/lost.js"></script>
 </head>
+
 <body>
     <div class="page_title">客户流失分析</div><br>
     <div id="tb" style="padding:2px 5px;">
