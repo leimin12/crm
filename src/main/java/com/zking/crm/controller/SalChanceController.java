@@ -104,7 +104,7 @@ public class SalChanceController {
         if (salChance.getType() == 1) {
             return "sale/editSalChance";
         }else if(salChance.getType()==2) {
-            List<SysRole> list = sysRoleMapper.list();
+            List<SysRole> list = sysRoleMapper.list(new SysRole());
             model.addAttribute("list", list);
             return "sale/dispatch";
         }else if(salChance.getType()==3) {

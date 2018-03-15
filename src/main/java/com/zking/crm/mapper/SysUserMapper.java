@@ -20,6 +20,6 @@ public interface SysUserMapper {
 
     SysUser doLogin(SysUser sysUser);
 
-    List<SysUser> list();
+    List<SysUser> list(SysUser sysUser);
 
 }

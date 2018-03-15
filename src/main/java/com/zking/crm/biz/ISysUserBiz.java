@@ -7,6 +7,5 @@ import java.util.List;
 public interface ISysUserBiz {
     SysUser doLogin(SysUser sysUser);
 
-    List<SysUser> list();
-
+    List<SysUser> list(SysUser sysUser);
 }

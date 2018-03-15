@@ -2,8 +2,13 @@ package com.zking.crm.controller;
 
 import com.zking.crm.biz.IDIctIsEditableBiz;
 import com.zking.crm.biz.ISvrSatisfyBiz;
+import com.zking.crm.biz.ISysRoleBiz;
+import com.zking.crm.biz.ISysUserBiz;
+import com.zking.crm.mapper.SysRoleMapper;
 import com.zking.crm.model.DictIsEditable;
 import com.zking.crm.model.SvrSatisfy;
+import com.zking.crm.model.SysRole;
+import com.zking.crm.model.SysUser;
 import com.zking.crm.util.PageBean;
 import com.zking.crm.util.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -24,16 +30,30 @@ public class SvrSatisfyController {
     private ISvrSatisfyBiz iSvrSatisfyBiz;
     @Autowired
     private IDIctIsEditableBiz idIctIsEditableBiz;
+    @Autowired
+    private ISysRoleBiz iSysRoleBiz;
+    @Autowired
+    private ISysUserBiz iSysUserBiz;
     @ModelAttribute
-    public void init(Model model){
+    public void init(Model model, HttpSession session){
         SvrSatisfy svrSatisfy = new SvrSatisfy();
+        SysRole sysRole = new SysRole();
+        sysRole.setRoleDesc("客户经理");
         DictIsEditable dictIsEditable = new DictIsEditable();
         dictIsEditable.setDictType("服务类型");
+        Object user = session.getAttribute("user");
+        System.out.println("usr:"+user);
+        SysUser sysUser=(SysUser) user;
+        System.out.println("sysUser:"+sysUser);
+        SysRole load = iSysRoleBiz.load(sysUser.getUserRoleId());
         List<SvrSatisfy> svrSatisfyList = iSvrSatisfyBiz.list(svrSatisfy, new PageBean());
         List<DictIsEditable> dictIsEditableList = idIctIsEditableBiz.list(dictIsEditable, new PageBean());
+        List<SysRole> sysRoleList = iSysRoleBiz.list(sysRole);
         model.addAttribute("svrSatisty", svrSatisfy);
         model.addAttribute("svrSatisfyList", svrSatisfyList);
         model.addAttribute("dictIsEditableList", dictIsEditableList);
+        model.addAttribute("sysRoleList", sysRoleList);
+        model.addAttribute("load", load);
     }
     @RequestMapping("/toServiceAdd")
     public String ToServiceadd(Model model){
@@ -57,7 +77,6 @@ public class SvrSatisfyController {
     }
     @RequestMapping("/Add")
     public String Add(Model model,SvrSatisfy svrSatisfy) {
-        svrSatisfy.setSvrCreateId(1l);
         svrSatisfy.setSvrStatus("1");
         iSvrSatisfyBiz.add(svrSatisfy);
         return "cust/service/dispatch";
@@ -83,7 +102,7 @@ public class SvrSatisfyController {
     public int ToEdit(SvrSatisfy svrSatisfy){
         svrSatisfy.setSvrDueDate(new Date());
         iSvrSatisfyBiz.edit(svrSatisfy);
-    return 1;
+        return 1;
     }
     @RequestMapping("/ToDealLoad")
     public String ToLoadDeal(SvrSatisfy svrSatisfy,Model model){

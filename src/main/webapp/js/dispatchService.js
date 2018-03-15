@@ -59,7 +59,6 @@ $ (function () {
                             iconCls:'icon-save',
                             handler:function(){
                                 var svrDueTo = $("#svrDueTo").combobox("getValue");
-                                alert(svrDueTo);
                                 var url = "svr/ToEdit?svrId="+rows.svrId+"&svrDueTo="+svrDueTo+"&svrStatus=2";
                                 $.ajax({
                                     dataType:'json',
@@ -125,7 +124,6 @@ $ (function () {
 
     });
     $("#ds").click(function () {
-        alert($("#svrType").val())
         var formData = {
             svrCustName:$("#svrCustName").val(),
             svrType:$("#svrType").val(),

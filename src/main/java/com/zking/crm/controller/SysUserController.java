@@ -28,8 +28,8 @@ public class SysUserController {
     }
 
     @RequestMapping("list")
-    public List<SysRole> list(){
-        List<SysRole> list = sysRoleMapper.list();
+    public List<SysRole> list(SysRole sysRole){
+        List<SysRole> list = sysRoleMapper.list(sysRole);
         return list;
     }
 

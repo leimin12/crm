@@ -59,7 +59,9 @@
     </tr>
     <tr>
         <th>创建人</th>
-        <td><input name="svrCreateBy" value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
+        <td>
+            <input type="hidden" name="svrCreateId" value="${load.roleId}">
+            <input name="svrCreateBy" value="${load.roleName}" readonly size="20" /><span class="red_star">*</span></td>
         <th>创建时间</th>
         <td><input  name="svrCreateDate" value="<%=new Date()%>" readonly size="20" /><span class="red_star">*</span>
         </td>

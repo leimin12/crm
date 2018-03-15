@@ -110,7 +110,7 @@
                     <img src="images/star.jpg" class="star_pic" />
                     <img src="images/star.jpg" class="star_pic" />
                 </c:if>
-                <c:if test="${svrSatisty.svrSatisfy==4}">
+                <c:if test="${satisfy.svrSatisfy==4}">
                     <img src="images/star.jpg" class="star_pic" />
                     <img src="images/star.jpg" class="star_pic" />
                     <img src="images/star.jpg" class="star_pic" />

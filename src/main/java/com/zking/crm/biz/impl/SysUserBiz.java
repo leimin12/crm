@@ -20,8 +20,8 @@ public class SysUserBiz implements ISysUserBiz {
     }
 
     @Override
-    public List<SysUser> list() {
-        return sysUserMapper.list();
+    public List<SysUser> list(SysUser sysUser) {
+        return sysUserMapper.list(sysUser);
     }
 
 

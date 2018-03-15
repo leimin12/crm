@@ -21,7 +21,7 @@ public interface SysRoleMapper {
 
     String getName(Integer integer);
 
-    List<SysRole> list();
+    List<SysRole> list(SysRole sysRole);
 
     Integer getId(String str);
 

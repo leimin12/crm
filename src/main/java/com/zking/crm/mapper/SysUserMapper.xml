@@ -23,7 +23,11 @@
       select * from sys_user WHERE user_name=#{userName,jdbcType=VARCHAR} and user_password=#{userPassword,jdbcType=VARCHAR};
     </select>
   <select id="list" resultMap="BaseResultMap">
-    select * from sys_user;
+    select * from sys_user WHERE
+    <if test="userRoleId != null ''!=userRoleId" >
+      user_role_id=#{userRoleId,jdbcType=INTEGER}
+    </if>
+
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from sys_user

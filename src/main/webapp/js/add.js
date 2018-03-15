@@ -3,7 +3,7 @@ $(function () {
         $('#ff').form('submit', {
             url:"dict/add",
             success:function(data){
-                back();
+               return false;
             }
         });
     });
@@ -13,8 +13,11 @@ $(function () {
         $('#dictEdit').form('submit', {
             url:"dict/ToEidt",
             success:function(data){
-                    $.messager
-                        .alert('提示', '修改成功');
+                 if(1==data){
+                     $.messager
+                         .alert('提示', '修改成功');
+                     return false;
+                 }
             }
         });
     });
@@ -24,7 +27,7 @@ $(function () {
         $('#sadd').form('submit', {
             url:"svr/Add",
             success:function(data){
-
+            return false;
             }
         });
     });

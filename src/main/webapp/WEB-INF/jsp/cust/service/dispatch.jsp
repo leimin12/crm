@@ -23,11 +23,11 @@
     概要:
     <input id="svrTitle"  type="text" style="width:100px"/>
     服务类型:<select id="svrType">
-        <option value="">全部</option>
-        <c:forEach items="${dictIsEditableList}" var="i">
-            <option value="${i.dictItem}">${i.dictItem}</option>
-        </c:forEach>
-        </select>
+    <option value="">全部</option>
+    <c:forEach items="${dictIsEditableList}" var="i">
+        <option value="${i.dictItem}">${i.dictItem}</option>
+    </c:forEach>
+</select>
     状态:
     <select id="svrStatus">
         <option value="">全部</option>
@@ -42,10 +42,9 @@
 
 <div id="dd" class="easyui-dialog" data-options="closed:true" title="服务分配" style="width:400px;height:100px;display: none;">
     <select class="easyui-combobox" id="svrDueTo" style="width:380px;">
-        <option value="小明">小明</option>
-        <option value="小芳">小芳</option>
-        <option value="小王">小王</option>
-        <option value="小混混">小混混</option>
+        <c:forEach items="${sysRoleList}" var="i">
+            <option value="${i.roleName}">${i.roleName}</option>
+        </c:forEach>
     </select>
 </div>
 </div>
