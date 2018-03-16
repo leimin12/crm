@@ -63,7 +63,7 @@
             <td>
                 <jsp:useBean id="now" class="java.util.Date" scope="page"/>
                 <input type="hidden" name="chcDueDate" value="${now}">
-                <input id="t2" name="" value="<fmt:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>"  readonly size="20" /><span class="red_star">*</span></td>
+                <input id="t2" name="" value="<m:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>"  readonly size="20" /><span class="red_star">*</span></td>
         </tr>
     </table>
 </form>

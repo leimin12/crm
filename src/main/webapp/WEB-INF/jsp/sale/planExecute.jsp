@@ -43,7 +43,7 @@
         <th>创建人</th>
         <td>${load.chcCreateBy}</td>
         <th>创建时间</th>
-        <td><fmt:formatDate value="${load.chcCreateDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/></td>
+        <td><m:formatDate value="${load.chcCreateDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/></td>
     </tr>
     <tr>
         <th>指派给</th>
@@ -51,7 +51,7 @@
             ${load.chcDueTo}
         </td>
         <th>指派时间</th>
-        <td><fmt:formatDate value="${load.chcDueDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/>
+        <td><m:formatDate value="${load.chcDueDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/>
            </td>
     </tr>
 </table>

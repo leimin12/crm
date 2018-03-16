@@ -41,14 +41,14 @@
         <th>创建人</th>
         <td>${load.chcCreateBy}</td>
         <th>创建时间</th>
-        <td><fmt:formatDate value="${load.chcCreateDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/></td>
+        <td><m:formatDate value="${load.chcCreateDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/></td>
     </tr>
     <tr>
         <th>指派给</th>
         <td>
             ${load.chcDueTo}</td>
         <th>指派时间</th>
-        <td><fmt:formatDate value="${load.chcDueDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/>
+        <td><m:formatDate value="${load.chcDueDate}" pattern="yyyy年MM月dd日 hh时mm分ss秒"/>
            </td>
     </tr>
 </table>
@@ -65,7 +65,7 @@
             <jsp:useBean id="now" class="java.util.Date" scope="page"/>
             <input type="hidden" name="plaChcId" value="${load.chcId}">
             <input type="hidden" name="plaDate" value="${now}">
-            <td><input value="<fmt:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>" readonly/><span class="red_star">*</span></td>
+            <td><input value="<m:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>" readonly/><span class="red_star">*</span></td>
             <th>计划项</th>
             <td>
                 <input size="50" name="plaTodo" /><span class="red_star">*</span>
