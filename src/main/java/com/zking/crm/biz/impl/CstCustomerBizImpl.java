@@ -17,7 +17,7 @@ public class CstCustomerBizImpl implements ICstCustomerBiz {
 
     @Override
     public List<CstCustomer> list(CstCustomer cstCustomer, PageBean pageBean) {
-        return cstCustomerMapper.list(cstCustomer);
+         return cstCustomerMapper.list(cstCustomer);
     }
 
     @Override
