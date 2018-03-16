@@ -12,11 +12,11 @@
                     var names=eval(m[0]);
                     var moneys=eval(m[1]);
                     var data =[moneys];
-                    var data_max = 10000; //Y轴最大刻度
+                    var data_max = 15000; //Y轴最大刻度
                     var line_title = ["总金额"]; //曲线名称
                     var y_label = "总金额（元）"; //Y轴标题
                     var x_label = "客户名称"; //X轴标题
-                    var x = [names[0],names[1]]; //定义X轴刻度值
+                    var x = names; //定义X轴刻度值
                     var title = "客户贡献分析"; //统计图标标题
                     j.jqplot.diagram.base("chart2", data, line_title, "客户贡献分析", x, x_label, y_label, data_max,2);
                 }
@@ -37,7 +37,11 @@
                     var line_title = ["总金额"]; //曲线名称
                     var y_label = "总金额（元）"; //Y轴标题
                     var x_label = "客户名称"; //X轴标题
-                    var x = [names[0],names[1]]; //定义X轴刻度值
+                    var xs;
+                    for(var i=0;i<names.length;i++){
+                        xs.add(names[i]);
+                    }
+                    var x = [xs]; //定义X轴刻度值
                     var title = "客户贡献分析"; //统计图标标题
                     j.jqplot.diagram.base("chart2", data, line_title, "客户贡献分析", x, x_label, y_label, data_max,2);
                 }
