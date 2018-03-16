@@ -17,6 +17,6 @@ public class LostBiz implements ILostBiz {
 
     @Override
     public List<Lost> listLost(Lost lost, PageBean pageBean) {
-        return lostMapper.listLost(lost);
+         return lostMapper.listLost(lost);
     }
 }

@@ -11,7 +11,7 @@ public interface ICstCustomerBiz {
 
     void add(CstCustomer cstCustomer);
 
-    void del(CstCustomer cstCustomer);
+     void del(CstCustomer cstCustomer);
 
     void edit(CstCustomer cstCustomer);
 
