@@ -282,7 +282,12 @@ $(function () {
         }, {
             field: 'plaTodo',
             title: '计划项',
-            width: '80%'
+            width: '40%'
+        }, {
+            field: 'plaResult',
+            title: '执行效果',
+            width: '40%',
+            editor:'text'
         }]]
     });
     $('#planExecute').datagrid({
