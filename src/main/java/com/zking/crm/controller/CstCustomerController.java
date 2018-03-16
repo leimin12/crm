@@ -26,9 +26,7 @@ public class CstCustomerController {
     public void init(Model model, HttpSession session){
         CstCustomer cstCustomer = new CstCustomer();
         List<CstCustomer> listregion = iCstCustomerBiz.listregion(cstCustomer);
-
         model.addAttribute("listregion",listregion);
-
         model.addAttribute("cst",cstCustomer);
 
     }
