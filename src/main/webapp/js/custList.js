@@ -29,7 +29,6 @@ $ (function () {
                                 }else{
                                     $.messager.alert('警告','删除失败,请与管理员联系');
                                 }
-
                             }
                         });
                     }
