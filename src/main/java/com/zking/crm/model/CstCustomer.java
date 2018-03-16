@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class CstCustomer implements Serializable{
     private String custNo;
 
-
     private String custName;
 
     private String custRegion;

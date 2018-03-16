@@ -8,7 +8,6 @@ import java.util.Date;
 public class Orders implements Serializable{
     private Long odrId;
 
-
     private String odrCustomer;
     @JsonFormat(pattern = "yyyy年MM月dd日")
     private Date odrDate;

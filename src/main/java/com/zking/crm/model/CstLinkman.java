@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class CstLinkman implements Serializable{
     private Long lkmId;
 
-
     private String lkmCustNo;
 
     private String lkmCustName;
