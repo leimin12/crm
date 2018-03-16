@@ -175,9 +175,9 @@ $(function () {
         return false;
     });
     $('#plan').datagrid({
-        url: 'salPlan/list',
+        url: 'salPlan/list?plaChcId='+$("#chcId").html(),
         singleSelect: true,
-        idField: 'chcId',
+        idField: 'plaId',
         rownumbers: true,
         toolbar: [{
             iconCls: 'icon-remove',
@@ -192,7 +192,7 @@ $(function () {
                     if (r) {
                         var url = 'salPlan/del?plaId=' + row.plaId;
                         $.ajax({
-                            url: url,
+                            url: url
                         });
                         var idIndex = $('#plan').datagrid("getRowIndex", row.plaId);
                         $('#plan').datagrid("deleteRow", idIndex);
@@ -271,9 +271,9 @@ $(function () {
             return false;
         });
     $('#planLoad').datagrid({
-        url: 'salPlan/list',
+        url: 'salPlan/list?plaChcId='+$("#chcId").html(),
         singleSelect: true,
-        idField: 'chcId',
+        idField: 'plaId',
         rownumbers: true,
         columns: [[{
             field: 'plaDate',
@@ -282,13 +282,18 @@ $(function () {
         }, {
             field: 'plaTodo',
             title: '计划项',
-            width: '80%'
+            width: '40%'
+        }, {
+            field: 'plaResult',
+            title: '执行效果',
+            width: '40%',
+            editor:'text'
         }]]
     });
     $('#planExecute').datagrid({
-        url: 'salPlan/list',
+        url: 'salPlan/list?plaChcId='+$("#chcId").html(),
         singleSelect: true,
-        idField: 'chcId',
+        idField: 'plaId',
         rownumbers: true,
         columns: [[{
             field: 'plaDate',

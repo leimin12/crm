@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <th>概要</th>
-        <td colspan="3"><input name="chcTitle" value="${load.chcTitle}" readonly size="52" /><span class="red_star">*</span></td>
+        <td colspan="3"><input name="chcTitle" value="${load.chcTitle}" readonly size="46" /><span class="red_star">*</span></td>
     </tr>
     <tr>
         <th>联系人</th>
@@ -37,11 +37,11 @@
     </tr>
     <tr>
         <th>机会描述</th>
-        <td colspan="3"><textarea rows="6" cols="50" name="chcDesc" readonly>${load.chcDesc}</textarea><span class="red_star">*</span></td>
+        <td colspan="3"><textarea rows="6" cols="47" name="chcDesc" readonly>${load.chcDesc}</textarea><span class="red_star">*</span></td>
     </tr>
     <tr>
         <th>创建人</th>
-        <td  colspan="3"><input name="chcCreateBy" value="刘颖" readonly size="20" readonly /><span class="red_star">*</span></td>
+        <td  colspan="3"><input name="chcCreateBy" value="${load.chcCreateBy}" readonly size="20" readonly /><span class="red_star">*</span></td>
     </tr>
 </table>
 
@@ -52,19 +52,18 @@
         <tr>
             <th>指派给</th>
             <td>
+
                 <select name="chcDueTo">
                     <option>请选择...</option>
-                    <option value="小明">小明</option>
-                    <option value="旺财">旺财</option>
-                    <option value="球球">球球</option>
-                    <option value="孙小美">孙小美</option>
-                    <option value="周洁轮">周洁轮</option>
+                    <c:forEach var="v" items="${list}">
+                    <option value="${v.roleName}">${v.roleName}</option>
+                    </c:forEach>
                 </select> <span class="red_star">*</span></td>
             <th>指派时间</th>
             <td>
                 <jsp:useBean id="now" class="java.util.Date" scope="page"/>
                 <input type="hidden" name="chcDueDate" value="${now}">
-                <input id="t2" name="" value="<fmt:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>"  readonly size="20" /><span class="red_star">*</span></td>
+                <input id="t2" name="" value="<m:formatDate value='${now}' pattern='yyyy-MM-dd hh:mm:ss'/>"  readonly size="20" /><span class="red_star">*</span></td>
         </tr>
     </table>
 </form>

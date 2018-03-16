@@ -10,6 +10,14 @@
       <arg column="dict_is_editable" jdbcType="BIT" javaType="java.lang.Boolean" />
     </constructor>
   </resultMap>
+  <resultMap id="fcc" type="com.zking.crm.model.DictIsEditable" >
+      <id column="dict_id" property="dictId" javaType="java.lang.Long" />
+      <result column="dict_type" property="dictType" javaType="java.lang.String" />
+      <result column="dict_item" property="dictItem" javaType="java.lang.String" />
+      <result column="dict_value" property="dictValue" javaType="java.lang.String" />
+      <result column="dict_is_editable" property="dictIsEditable" javaType="java.lang.Boolean" />
+
+  </resultMap>
   <sql id="Base_Column_List" >
     dict_id, dict_type, dict_item, dict_value, dict_is_editable
   </sql>
@@ -18,6 +26,22 @@
     <include refid="Base_Column_List" />
     from dict_is_editable
     where dict_id = #{dictId,jdbcType=BIGINT}
+  </select>
+  <select id="list" resultMap="BaseResultMap"
+          parameterType="com.zking.crm.model.DictIsEditable">
+    SELECT * from dict_is_editable where 1=1
+    <if test="dictType != null and ''!=dictType" >
+      and dict_type LIKE concat('%',#{dictType,jdbcType=VARCHAR},'%')
+    </if>
+    <if test="dictItem != null and ''!=dictItem" >
+      and dict_item =#{dictItem,jdbcType=VARCHAR}
+    </if>
+    <if test="dictValue != null and ''!=dictValue" >
+      and dict_value=#{dictValue,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <select id="listType" resultMap="fcc" parameterType="com.zking.crm.model.DictIsEditable">
+    select DISTINCT dict_type from dict_is_editable where dict_type LIKE concat('%',#{dictType,jdbcType=VARCHAR},'%')
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from dict_is_editable
@@ -82,7 +106,7 @@
         dict_is_editable = #{dictIsEditable,jdbcType=BIT},
       </if>
     </set>
-    where dict_id = #{dictId,jdbcType=BIGINT}
+    where dict_id = #{dictId,jdbcType=BIGINT} and dict_is_editable=1
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zking.crm.model.DictIsEditable" >
     update dict_is_editable

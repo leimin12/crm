@@ -3,6 +3,8 @@ package com.zking.crm.mapper;
 import com.zking.crm.model.SysUser;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface SysUserMapper {
     int deleteByPrimaryKey(Integer userId);
@@ -15,5 +17,9 @@ public interface SysUserMapper {
 
     int updateByPrimaryKeySelective(SysUser record);
 
-    int updateByPrimaryKey(SysUser record);
+
+    SysUser doLogin(SysUser sysUser);
+
+    List<SysUser> list(SysUser sysUser);
+
 }

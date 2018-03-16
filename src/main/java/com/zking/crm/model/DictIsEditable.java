@@ -2,11 +2,10 @@ package com.zking.crm.model;
 
 import java.io.Serializable;
 
-public class DictIsEditable implements Serializable{
+public class DictIsEditable implements Serializable {
     private Long dictId;
 
     private String dictType;
-
 
     private String dictItem;
 

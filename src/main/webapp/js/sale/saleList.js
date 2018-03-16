@@ -53,13 +53,10 @@ $(function() {
                     if (r) {
                         var url = 'SalChance/del?chcId='+ row.chcId;
                         $.ajax({
-                            url : url,
-                            dataType: "text",
-                            success:function (data) {
-                                var idIndex = $('#dg').datagrid("getRowIndex", row.chcId);
-                                $('#dg').datagrid("deleteRow", idIndex);
-                            }
+                            url : url
                         });
+                        var idIndex = $('#dg').datagrid("getRowIndex", row.chcId);
+                        $('#dg').datagrid("deleteRow", idIndex);
                     }
                 });
             },

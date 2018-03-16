@@ -1,14 +1,14 @@
 @import url("menu.css");
 
 body {
-	font-family: "ËÎÌå", "Arial", "Helvetica", "sans-serif";
+	font-family: "ï¿½ï¿½ï¿½ï¿½", "Arial", "Helvetica", "sans-serif";
 	font-size: 12px;
 	padding:6px;
 }
 .star_pic{
 	width:16px;
 }
-/*buttonÑùÊ½*/
+/*buttonï¿½ï¿½Ê½*/
 .common_button {
 	border: #2C59AA 1px solid; 
 	padding:1px 2px 0px 2px; 
@@ -20,16 +20,16 @@ body {
 	cursor:hand;
 	width:16px;
 }
-/*±íÊ¾Ç¿µ÷£¬ÓÃÓÚÌáÊ¾±ØÊäÏî*/
+/*ï¿½ï¿½Ê¾Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .red_star{
 	color:red;
 	font-weight:bold;
 }
 /*
-	ÁÐ±íÒ³ÑùÊ½
+	ï¿½Ð±ï¿½Ò³ï¿½ï¿½Ê½
 */
 .page_title{
-	font-family:"Verdana","ËÎÌå", "Arial", "Helvetica", "sans-serif";
+	font-family:"Verdana","ï¿½ï¿½ï¿½ï¿½", "Arial", "Helvetica", "sans-serif";
 	font-size: 14px;
 	font-weight:bold;
 }
@@ -37,7 +37,7 @@ body {
 	text-align:right;
 	padding:1px;
 }
-/*²éÑ¯±íµ¥ÑùÊ½*/
+/*ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Ê½*/
 .query_form_table{
 	width:100%;
 	border-collapse:collapse; 
@@ -48,7 +48,7 @@ body {
 	font-size:12px;
 	font-weight:normal;
 	border-bottom:solid 1px #8c8c8c;
-	background-color:#6EC2FD;
+	background-color:#95B8E7;
 	font-weight:400;
 	font-size:13px;
 	color:#000;
@@ -62,7 +62,7 @@ body {
 	width:18%;
 }
 
-/*ÁÐ±íÑùÊ½*/
+/*ï¿½Ð±ï¿½ï¿½ï¿½Ê½*/
 .data_list_table{
 	width:100%;
 	border-collapse:collapse; 
@@ -73,7 +73,7 @@ body {
 	font-size:12px;
 	font-weight:normal;
 	border-bottom:solid 1px #8c8c8c;
-	background-color:#0066cc;
+	background-color:#F4F4F4;
 	font-size:13px;
 	color:#fff;
 	height:30px;
@@ -147,7 +147,7 @@ TH.locked {
 
 
 td {
-	font-family: "ËÎÌå", "Arial", "Helvetica", "sans-serif";
+	font-family: "ï¿½ï¿½ï¿½ï¿½", "Arial", "Helvetica", "sans-serif";
 	font-size: 12px;
 }
 form {
@@ -202,7 +202,7 @@ a:active {
 	background-color: #FF0101;
 }
 .navMenu {
-	font-family: "ËÎÌå", "Arial", "Helvetica", "sans-serif";
+	font-family: "ï¿½ï¿½ï¿½ï¿½", "Arial", "Helvetica", "sans-serif";
 	font-size: 12px;
 	background-color: #F1F1F1;
 	color: #7D7D7D;

@@ -47,7 +47,6 @@ public class SalPlanController {
     @RequestMapping("list")
     @ResponseBody
     public List<SalPlan> list(SalPlan salPlan, Model model, HttpServletRequest request) {
-        salPlan.setPlaChcId(19);
         return salPlanBiz.list(salPlan);
     }
 

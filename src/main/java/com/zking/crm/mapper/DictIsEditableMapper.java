@@ -1,7 +1,10 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.DictIsEditable;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface DictIsEditableMapper {
     int deleteByPrimaryKey(Long dictId);
 
@@ -14,4 +17,8 @@ public interface DictIsEditableMapper {
     int updateByPrimaryKeySelective(DictIsEditable record);
 
     int updateByPrimaryKey(DictIsEditable record);
+
+    List<DictIsEditable> list(DictIsEditable dictIsEditable);
+
+    List<DictIsEditable> listType(DictIsEditable dictIsEditable);
 }
