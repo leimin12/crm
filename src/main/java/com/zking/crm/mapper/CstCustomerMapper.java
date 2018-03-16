@@ -21,7 +21,7 @@ public interface CstCustomerMapper {
 
     List<CstCustomer> list(CstCustomer cstCustomer);
 
-    List<CstCustomer> listregion(CstCustomer cstCustomer);
+     List<CstCustomer> listregion(CstCustomer cstCustomer);
 
 
 

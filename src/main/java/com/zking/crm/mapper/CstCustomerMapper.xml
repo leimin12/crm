@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.crm.mapper.CstCustomerMapper" >
   <resultMap id="BaseResultMap" type="com.zking.crm.model.CstCustomer" >
-    <constructor >
+    <constructor>
       <idArg column="cust_no" jdbcType="CHAR" javaType="java.lang.String" />
       <arg column="cust_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cust_region" jdbcType="VARCHAR" javaType="java.lang.String" />
