@@ -14,6 +14,37 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/add.js"></script>
+    <script type="text/javascript">
+        function mysb(sname){
+            $("#dictType").val(sname);
+            $("#da").hide();
+        }
+        function myf(sname){
+            $("#da").show();
+            $.ajax({
+                url:"dict/listDictType",
+                data:"dictType="+sname,
+                dataType:"text",
+                success:function(str){
+                    var ss=eval(str);//将字符串转数组（集合）
+                    var sb="<ul>";
+                    for(var i=0;i<ss.length;i++){
+                        sb+="<li onmouseover=\"this.className='la'\" onmouseout=\"this.className='lb'\" onclick=\"mysb('"+ss[i].dictType+"')\">"+ss[i].dictType+"</li>";
+                    }
+                    sb+="</ul>";
+                    $("#da").html(sb);
+                },
+                error:function(){
+                    alert("错了");
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        li{list-style: none}
+        .la{background-color: whitesmoke}
+        .lb{}
+    </style>
 </head>
 <body>
 
@@ -29,7 +60,10 @@
         <th>编号</th>
         <td><input readonly /></td>
         <th>类别</th>
-        <td><input name="dictType" /><span class="red_star">*</span><br />（需要使用Ajax实现自动补全功能）</td>
+        <td><input id="dictType" name="dictType" onkeyup="myf(this.value)"/>
+            <span class="red_star">*</span>
+            <div id="da" style="position:absolute; width: 150px;border-width: 1px;border-color: gray;border-style: groove;display: none;background-color:#CCE6FF"></div>
+            <br />（需要使用Ajax实现自动补全功能）</td>
     </tr>
     <tr>
         <th>条目</th>

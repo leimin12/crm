@@ -19,4 +19,6 @@ public interface DictIsEditableMapper {
     int updateByPrimaryKey(DictIsEditable record);
 
     List<DictIsEditable> list(DictIsEditable dictIsEditable);
+
+    List<DictIsEditable> listType(DictIsEditable dictIsEditable);
 }
