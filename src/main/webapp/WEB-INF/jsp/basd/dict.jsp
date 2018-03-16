@@ -31,6 +31,31 @@
 <table class="data_list_table" id="di" width="100%">
 
 </table>
-
+<div id="wu-dialog1" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:550px;  padding:20px;">
+    <form method="post" id="wu-form1">
+        <table class="query_form_table"> 
+            <tr>
+                <th>编号</th>
+                <td>
+                    <input  name="dictId" readonly></td>
+                <th>类别</th>
+                <td><input name="dictType"  /><span class="red_star">*</span><br />（需要使用Ajax实现自动补全功能）</td>
+            </tr>
+            <tr>
+                <th>条目</th>
+                <td><input name="dictItem"  /><span class="red_star">*</span></td>
+                <th>值</th>
+                <td><input name="dictValue" /><span class="red_star">*</span></td>
+            </tr>
+            <tr>
+                <th>是否可编辑</th>
+                <td><input name="dictIsEditable" type="checkbox" value="1"/>
+                </td>
+                <th>&nbsp;</th>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>

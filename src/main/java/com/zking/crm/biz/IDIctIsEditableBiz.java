@@ -15,4 +15,6 @@ public interface IDIctIsEditableBiz {
     DictIsEditable load(DictIsEditable dictIsEditable);
 
     List<DictIsEditable> list(DictIsEditable dictIsEditable, PageBean pageBean);
+
+    List<DictIsEditable> listType(DictIsEditable dictIsEditable);
 }

@@ -36,12 +36,17 @@ public class DictIsEditableController {
     public ResponseData listDispatch(DictIsEditable dictIsEditable, HttpServletRequest request) {
         PageBean pageBean = new PageBean();
         pageBean.setRequest(request);
-
         List<DictIsEditable> dictIsEditableList = idIctIsEditableBiz.list(dictIsEditable,pageBean);
         ResponseData responseData = new ResponseData();
         responseData.setTotal(pageBean.getTotalRecord());
         responseData.setRows(dictIsEditableList);
         return responseData;
+    }
+    @RequestMapping("/listDictType")
+    @ResponseBody
+    public List<DictIsEditable> listDictType(DictIsEditable dictIsEditable) {
+        System.out.println("dictType:"+dictIsEditable.getDictType());
+        return idIctIsEditableBiz.listType(dictIsEditable);
     }
     @RequestMapping("/Toadd")
     public String ToAdd(){

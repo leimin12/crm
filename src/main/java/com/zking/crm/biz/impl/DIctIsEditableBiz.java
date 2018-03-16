@@ -35,4 +35,9 @@ public class DIctIsEditableBiz implements IDIctIsEditableBiz {
     public List<DictIsEditable> list(DictIsEditable dictIsEditable, PageBean pageBean) {
         return dictIsEditableMapper.list(dictIsEditable);
     }
+
+    @Override
+    public List<DictIsEditable> listType(DictIsEditable dictIsEditable) {
+        return dictIsEditableMapper.listType(dictIsEditable);
+    }
 }

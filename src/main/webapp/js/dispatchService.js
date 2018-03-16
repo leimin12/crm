@@ -46,6 +46,7 @@ $ (function () {
                     $.messager.alert('警告', '请选择要分配的记录');
                     return;
                 }else{
+
                     $('#dd').dialog({
                         title: '分配',
                         width: 400,

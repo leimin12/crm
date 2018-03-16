@@ -23,8 +23,13 @@ public class SysUserController {
     @RequestMapping("doLogin")
     public String doLogin(SysUser sysUser, HttpSession session) {
         SysUser user = sysUserBiz.doLogin(sysUser);
-        session.setAttribute("user", user);
-        return "redirect:/sysTreeNode/list?parentNodeId=-1";
+        if(null!=user){
+            session.setAttribute("user", user);
+            return "redirect:/sysTreeNode/list?parentNodeId=-1";
+        }else {
+            return "login";
+        }
+
     }
 
     @RequestMapping("list")
