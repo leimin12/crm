@@ -7,6 +7,7 @@ public class OrdersLine implements Serializable{
 
     private Long oddOrderId;
 
+
     private Long oddProdId;
 
     private Long oddCount;

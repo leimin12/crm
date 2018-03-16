@@ -12,6 +12,7 @@ public class CstLost implements Serializable{
 
     private String lstCustName;
 
+
     private Long lstCustManagerId;
 
     private String lstCustManagerName;
