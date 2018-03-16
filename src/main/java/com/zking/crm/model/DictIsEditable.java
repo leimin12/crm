@@ -7,6 +7,7 @@ public class DictIsEditable implements Serializable{
 
     private String dictType;
 
+
     private String dictItem;
 
     private String dictValue;

@@ -33,6 +33,7 @@ public class CstActivity implements Serializable{
         this.atvDesc = atvDesc;
     }
 
+
     public CstActivity() {
         super();
     }

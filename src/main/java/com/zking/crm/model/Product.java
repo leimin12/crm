@@ -67,6 +67,7 @@ public class Product implements Serializable{
         return prodUnit;
     }
 
+
     public void setProdUnit(String prodUnit) {
         this.prodUnit = prodUnit;
     }
