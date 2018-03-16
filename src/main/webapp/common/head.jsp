@@ -16,6 +16,7 @@
 <script type="text/javascript" src="jquery-easyui-1.5.1/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/context.jsp"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
 <script src="js/common.js" type="text/javascript"></script>
 <script src="js/dealService.js" type="text/javascript"></script>
 <script src="js/dispatchService.js" type="text/javascript"></script>
