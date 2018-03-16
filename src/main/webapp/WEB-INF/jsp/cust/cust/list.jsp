@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="page_title">客户信息管理</div>
-
     <table class="query_form_table">
         <tr>
             <th>客户编号</th>

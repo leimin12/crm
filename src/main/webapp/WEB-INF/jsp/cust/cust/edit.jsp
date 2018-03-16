@@ -7,7 +7,6 @@
     <script src="script/common.js"></script>
 </head>
 <body>
-
 <div class="page_title">客户信息管理 > 客户信息</div>
 <div class="button_bar">
     <button class="common_button" onclick="help('');">帮助</button>
