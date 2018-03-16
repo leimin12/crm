@@ -118,7 +118,9 @@ public class SalChanceController {
 
     @RequestMapping("list")
     @ResponseBody
-    public ResponseData list(SalChance salChance, Model model, HttpServletRequest request,PageBean pageBean,ResponseData responseData) {
+    public ResponseData list(HttpSession session,SalChance salChance, Model model, HttpServletRequest request,PageBean pageBean,ResponseData responseData) {
+        SysUser sysUser = (SysUser) session.getAttribute("user");
+        salChance.setChcCreateId(sysUser.getUserId());
         pageBean.setRequest(request);
         List<SalChance> list = salChanceBiz.list(salChance, pageBean);
         responseData.setTotal(pageBean.getTotalRecord());// 总行数

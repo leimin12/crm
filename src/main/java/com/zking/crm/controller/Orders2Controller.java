@@ -22,7 +22,7 @@ public class Orders2Controller {
         return "rept/contr";
     }
 
-    @RequestMapping("listCount")
+    @RequestMapping(value = "listCount",produces = "text/html;charset=utf-8")
     @ResponseBody
     public String listCount(Orders2 orders3) {
         List<Map<String, Object>> maps = orders2Biz.listCount(orders3);
