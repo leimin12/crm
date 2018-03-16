@@ -28,7 +28,6 @@ public class Orders2Controller {
         List<Map<String, Object>> maps = orders2Biz.listCount(orders3);
         Map<String,Object>  map;
         Map<String,Object>  map2;
-
         Map<String, Object>  map3;
         List<String> list1 = new ArrayList<String>();
         List<Object> list2 = new ArrayList<Object>();

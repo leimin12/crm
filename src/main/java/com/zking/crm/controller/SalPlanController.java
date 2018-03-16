@@ -18,7 +18,6 @@ public class SalPlanController {
     @Autowired
     private ISalPlanBiz salPlanBiz;
 
-
     @RequestMapping("toPlanList")
     public String toPlanList() {
         return "sale/planList";
