@@ -32,7 +32,7 @@
     where chc_id = #{chcId,jdbcType=INTEGER}
   </select>
     <select id="list" resultMap="BaseResultMap"  parameterType="com.zking.crm.model.SalChance">
-      SELECT * from sal_chance where chc_status=1
+      SELECT * from sal_chance where chc_status=1 and chc_create_id=#{chcCreateId,jdbcType=INTEGER}
       <if test="chcCustName != null and ''!=chcCustName" >
         and chc_cust_name like concat('%',#{chcCustName},'%')
       </if>
@@ -225,9 +225,7 @@
       chc_rate = #{chcRate,jdbcType=INTEGER},
       chc_linkman = #{chcLinkman,jdbcType=VARCHAR},
       chc_tel = #{chcTel,jdbcType=VARCHAR},
-      chc_desc = #{chcDesc,jdbcType=VARCHAR},
-      chc_create_id = #{chcCreateId,jdbcType=INTEGER},
-      chc_create_by = #{chcCreateBy,jdbcType=VARCHAR}
+      chc_desc = #{chcDesc,jdbcType=VARCHAR}
     where chc_id = #{chcId,jdbcType=INTEGER}
   </update>
   <update id="editStatusByDispatch" parameterType="com.zking.crm.model.SalChance">
